@@ -1,4 +1,7 @@
+##Diagrama de clases
+```mermaid
 classDiagram
+
     class Ingrediente {
         -string nom
         -float peso
