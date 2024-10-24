@@ -1,11 +1,23 @@
-
-#include "Ingrediente.h"
-#include "Platillo.h"
-#include "Inventario.h"
-#include "Menu.h"
+#include "inventario.cpp"
 #include <iostream>
+#include <vector>
+#include <fstream>
+#include <sstream>
+#include <string>
+
+using namespace std;
 
 int main() {
+    Inventario inv;
+
+    inv.leerDesdeArchivo("inventario.csv");
+
+    inv.imprimir(inv.inventarioIngredientes);
+
+    return 0;
+}
+
+/*
     // Crear ingredientes
     Ingrediente ing1("Tomate", 0.2, 1, 10);
     Ingrediente ing2("Cebolla", 0.15, 2, 5);
@@ -23,6 +35,4 @@ int main() {
     Menu menu("Ensalada", "Sopa");
     menu.print("Ensalada");
     menu.printOpcion2("Sopa");
-
-    return 0;
-}
+*/

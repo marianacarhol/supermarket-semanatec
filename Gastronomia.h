@@ -2,6 +2,7 @@
 #define GASTRONOMIA_H
 
 #include <string>
+using namespace std;
 
 class Gastronomia {
 private:

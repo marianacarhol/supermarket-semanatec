@@ -1,4 +1,5 @@
 #include "Gastronomia.h"
+using namespace std;
 
 // Constructor
 Gastronomia::Gastronomia(const std::string& tipo) : tipo(tipo) {}

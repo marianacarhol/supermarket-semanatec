@@ -1,4 +1,5 @@
 #include "Platillo.h"
+using namespace std;
 
 // Constructor
 Platillo::Platillo(const std::string& nom, const std::string& tipo, const std::string& receta)

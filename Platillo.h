@@ -1,10 +1,11 @@
 #ifndef PLATILLO_H
 #define PLATILLO_H
 
-#include "Ingrediente.h"
-#include "Gastronomia.h"
+#include "ingrediente.cpp"
+#include "gastronomia.cpp"
 #include <string>
 #include <vector>
+using namespace std;
 
 class Platillo : public Gastronomia {
 private:

@@ -2,30 +2,33 @@
 #define INGREDIENTE_H
 
 #include <string>
+#include <iostream>
+using namespace std;
 
 class Ingrediente {
 private:
     std::string nom;
-    float peso;
-    int id;
+    std::string unidad;
+    std::string id;
     int cant;
 
 public:
     // Constructor
-    Ingrediente(const std::string& nom, float peso, int id, int cant);
+    Ingrediente(const std::string& id, const std::string& nom, const std::string& unidad, int cant);
 
     // Getters and Setters
     std::string getNom() const;
     void setNom(const std::string& nom);
 
     float getPeso() const;
-    void setPeso(float peso);
+    void setPeso(const std::string& unidad);
 
-    int getId() const;
-    void setId(int id);
+    string getId() const;
 
     int getCant() const;
     void setCant(int cant);
+
+    friend std::ostream& operator<<(std::ostream& os, const Ingrediente& ingrediente);
 };
 
 #endif
