@@ -14,11 +14,11 @@ void Ingrediente::setNom(const std::string& nom) {
     this->nom = nom;
 }
 
-float Ingrediente::getPeso() const {
-    return std::stof(unidad); // Suponiendo que 'unidad' contiene el peso en forma de cadena
+std::string Ingrediente::getUnidad() const {
+    return unidad; // Suponiendo que 'unidad' contiene el peso en forma de cadena
 }
 
-void Ingrediente::setPeso(const std::string& unidad) {
+void Ingrediente::setUnidad(const std::string& unidad) {
     this->unidad = unidad;
 }
 
@@ -36,7 +36,7 @@ void Ingrediente::setCant(int cant) {
 
 // Sobrecarga del operador de salida
 std::ostream& operator<<(std::ostream& os, const Ingrediente& ingrediente) {
-    os << "ID: " << ingrediente.id << ", Nombre: " << ingrediente.nom 
-       << ", Unidad: " << ingrediente.unidad << ", Cantidad: " << ingrediente.cant;
+    os << "ID: " << ingrediente.getId() << ", Nombre: " << ingrediente.getNom() 
+       << ", Unidad: " << ingrediente.getUnidad() << ", Cantidad: " << ingrediente.getCant();
     return os;
 }

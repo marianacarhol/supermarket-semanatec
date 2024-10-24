@@ -5,14 +5,15 @@
 
 class Menu {
 private:
-    std::string opcion1;
-    std::string opcion2;
+    int opcion1;
+    int opcion2;
 
 public:
-    Menu(const std::string& opcion1, const std::string& opcion2);
+    Menu(int opcion1, int opcion2, int opcion3);
 
-    void print(const std::string& opcion1) const;
-    void printOpcion2(const std::string& opcion2) const;
+    void printOpcion1(int opcion1);
+    void printOpcion2(int opcion2);
+    void printOpcion3(int opcion3);
 };
 
 #endif

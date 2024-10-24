@@ -1,16 +1,59 @@
 #include "Menu.h"
 #include <iostream>
 
+using namespace std;
+
 // Constructor
-Menu::Menu(const std::string& opcion1, const std::string& opcion2)
-    : opcion1(opcion1), opcion2(opcion2) {}
+Menu::Menu(int opcion1, int opcion2, int opcion3)
+    : opcion1(opcion1), opcion2(opcion2), opcion3(opcion3) {}
 
 // Imprimir opción 1
-void Menu::print(const std::string& opcion1) const {
-    std::cout << "Opción 1: " << opcion1 << std::endl;
+// 
+int Menu::printOpcion1() {
+    std::cout << "Base de Datos (Sabor Local)" << endl << endl;
+    std::cout << "¿Qué tipo de comida quieres comer hoy?" << endl;
+    std::cout << "1. Asiática" << endl;
+    std::cout << "2. Mexicana" << endl;
+    std::cout << "3. Italiana" << en << endld
+    std::cin >> opcion;
+    return opcion;
 }
 
 // Imprimir opción 2
-void Menu::printOpcion2(const std::string& opcion2) const {
-    std::cout << "Opción 2: " << opcion2 << std::endl;
+int Menu::printOpcion2(int op){
+
+    if (op == 1){
+        std::cout << "¿Qué platillo quieres comer?" << endl;
+    std::cout << "1. Pollo a la naranja" << endl;
+    std::cout << "2. Carne con brocoli" << endl;
+    std::cout << "3. Arroz frito" << endl << endl;
+    std::cin >> opcion;
+    return opcion;
+    } else if (op == 2){
+        std::cout << "¿Qué platillo quieres comer?" << endl;
+    std::cout << "4. Enchiladas suizas" << endl;
+    std::cout << "5. Chilaquiles verdes" << endl;
+    std::cout << "6. Arroz frito" <<  endl << endl;
+    std::cin >> opcion;
+    return opcion;
+    } else if (op == 3){
+        std::cout << "¿Qué platillo quieres comer?" << endl;
+    std::cout << "7. Spaguetti bolognesa" << endl;
+    std::cout << "8. Pasta alfredo con pollo" << endl << endl;
+    std::cout << "9. Pizza de pepperoni" << endl << endl;
+    std::cin >> opcion;
+    return opcion;
+    } else {
+        std::cout << "El elemento ingresado no es válido.";
+        return -1;
+    }   
+}
+    
+// Imprimir opción 3
+int Menu::printOpcion3(int op) {
+    std::cout << "¿Quieres comprarlo?" << endl;
+    std::cout << "1. Sí" << endl;
+    std::cout << "2. No" << endl;
+    std::cin >> opcion;
+    return opcion;
 }

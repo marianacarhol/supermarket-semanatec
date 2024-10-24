@@ -55,3 +55,24 @@ void Inventario::imprimir(const std::vector<Ingrediente>& ingredientes) const {
     }
 }
 
+void Inventario::actualizar(const std::vector<Ingrediente>& ingredientes, const std::vector<Ingrediente>& ingredientesPlatillo, int op) const {
+    if (op == 1) {
+        // Iteramos sobre los ingredientes del platillo
+        for (const auto& ingredientePlatillo : ingredientesPlatillo) {
+            // Buscamos el ingrediente en el inventario
+            for (auto& ingrediente : inventarioIngredientes) {
+                if (ingrediente.getId() == ingredientePlatillo.getId()) {
+                    // Restamos uno a la cantidad del inventario
+                    int nuevaCantidad = ingrediente.getCant() - 1;
+                    if (nuevaCantidad < 0) {
+                        std::cerr << "Error: No hay suficiente " << ingrediente.getNom() << " en el inventario." << std::endl;
+                    } else {
+                        // Actualizamos la cantidad en el inventario
+                        ingrediente.setCant(nuevaCantidad);
+                    }
+                    break;
+                }
+            }
+        }
+    }
+}

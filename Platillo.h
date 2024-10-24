@@ -1,29 +1,38 @@
 #ifndef PLATILLO_H
 #define PLATILLO_H
 
-#include "ingrediente.cpp"
-#include "gastronomia.cpp"
 #include <string>
 #include <vector>
-using namespace std;
 
-class Platillo : public Gastronomia {
+class Platillo {
 private:
     std::string nom;
-    std::vector<Ingrediente> ingredientes;
+    std::string tipo;
+    std::vector<int> ingredientes;
     std::string receta;
 
 public:
-    Platillo(const std::string& nom, const std::string& tipo, const std::string& receta);
+    // Constructor
+    Platillo();
+    
+    Platillo(const std::string& nom, const std::string& tipo, const std::vector<int>& ingredientes, const std::string& receta);
 
     // Getters
     std::string getNom() const;
     std::string getTipo() const;
-    std::vector<Ingrediente> getIngredientes() const;
+    std::string getIngredientes() const;
     std::string getReceta() const;
 
     // Agregar ingredientes
-    void agregarIngrediente(const Ingrediente& ingrediente);
+    void leerArchivo(const string& nombreArchivo);
+    void imp(const std::vector<Platillo>& platillos) const;
+    void mostrarIngredientes()const;
+
+    friend std::ostream& operator<<(std::ostream& os, const Platillo& platillo);
+
+    std::vector<int> leerArchivoIngredientes(const std::string& nombreArchivo, int tipoPlatillo);
+
+    
 };
 
 #endif

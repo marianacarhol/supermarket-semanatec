@@ -28,11 +28,6 @@ classDiagram
         +getReceta() string
     }
 
-    class Gastronomia {
-        -string tipo
-        +getTipo() string
-    }
-
     class Inventario {
         +getCantidad(Ingrediente) int
         +setCantidad(Ingrediente, int) void
@@ -46,5 +41,4 @@ classDiagram
         +print(string opcion2) void
     }
 
-    Platillo --|> Gastronomia : herencia
     Platillo "1" --> "*" Ingrediente : contiene

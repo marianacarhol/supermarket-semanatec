@@ -1,4 +1,5 @@
 #include "inventario.cpp"
+#include "platillo.cpp"
 #include <iostream>
 #include <vector>
 #include <fstream>
@@ -12,7 +13,13 @@ int main() {
 
     inv.leerDesdeArchivo("inventario.csv");
 
-    inv.imprimir(inv.inventarioIngredientes);
+    //inv.imprimir(inv.inventarioIngredientes);
+
+    Platillo p;
+
+    p.leerArchivo("platillo.csv", 1);
+
+    // p.imp(p.platilloIngredientes);
 
     return 0;
 }

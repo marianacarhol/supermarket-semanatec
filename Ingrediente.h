@@ -20,8 +20,8 @@ public:
     std::string getNom() const;
     void setNom(const std::string& nom);
 
-    float getPeso() const;
-    void setPeso(const std::string& unidad);
+    std::string getUnidad() const;
+    void setUnidad(const std::string& unidad);
 
     string getId() const;
 
