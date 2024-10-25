@@ -21,7 +21,7 @@ int main() {
     
     platillo.leerArchivo("platillo.csv", inv, op2, base);
     std::vector<int> ingredientes = platillo.leerArchivoIngredientes("ingredientes.csv", op2);
-
+    
     int op3 = m.printOpcion3();
 
     inv.actualizar(base, ingredientes, op3);

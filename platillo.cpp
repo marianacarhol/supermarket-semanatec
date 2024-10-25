@@ -53,6 +53,7 @@ void Platillo::leerArchivo(const string& nombreArchivo, const Inventario& invent
                 Platillo p(nom, tipo, ingredientes, receta);
 
                 p.compararIngredientes(baseDatos, ingredientes);
+                cout << endl << "Receta: " << p.getReceta() << endl;
             }
             numeroLinea++;
         }
