@@ -85,7 +85,7 @@ void Inventario::actualizar(std::vector<Ingrediente>& inventarioIngredientes, co
         }
 
         // Imprimir el inventario actualizado
-        std::cout << "Inventario actualizado:" << std::endl;
+        std::cout << endl << "Inventario actualizado:" << std::endl;
         if (inventarioIngredientes.empty()) {
             std::cout << "El inventario está vacío." << std::endl;
         } else {

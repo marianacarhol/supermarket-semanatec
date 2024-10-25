@@ -21,7 +21,6 @@ int Menu::printOpcion1() {
 
 // Imprimir opción 2
 int Menu::printOpcion2(int op){
-
     if (op == 1){
         std::cout << endl << "¿Qué platillo quieres comer?" << endl;
     std::cout << "1. Pollo a la naranja" << endl;

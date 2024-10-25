@@ -111,7 +111,7 @@ void Platillo::compararIngredientes(const std::vector<Ingrediente>& baseDatos, c
                     std::cout << "Ingrediente disponible: " << ingredienteBD.getNom()
                               << " (Cantidad disponible: " << ingredienteBD.getCant() << ")" << std::endl;
                 } else {
-                    std::cout << "Ingrediente no disponible: " << ingredienteBD.getNom() 
+                    std::cout << endl << "Ingrediente no disponible: " << ingredienteBD.getNom() 
                               << " (Cantidad: " << ingredienteBD.getCant() << ")" << std::endl;
                 }
                 encontrado = true;
