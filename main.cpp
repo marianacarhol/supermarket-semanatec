@@ -13,8 +13,8 @@ int main() {
 
     inv.leerDesdeArchivo("ingredientes.csv"); // Asegúrate de tener este método implementado
 
-    // Definir el nombre del archivo de platillos
-    std::string nombreArchivoPlatillos = "platillos.csv"; // Cambia el nombre según tu archivo
+    // Definir el nombre del archivo de platillo
+    std::string nombreArchivoPlatillos = "platillo.csv"; // Cambia el nombre según tu archivo
 
     // Crear una instancia de Platillo
     Platillo platillo;
