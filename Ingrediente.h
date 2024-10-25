@@ -9,12 +9,12 @@ class Ingrediente {
 private:
     std::string nom;
     std::string unidad;
-    std::string id;
+    int id;
     int cant;
 
 public:
     // Constructor
-    Ingrediente(const std::string& id, const std::string& nom, const std::string& unidad, int cant);
+    Ingrediente(int id, const std::string& nom, const std::string& unidad, int cant);
 
     // Getters and Setters
     std::string getNom() const;
@@ -23,7 +23,7 @@ public:
     std::string getUnidad() const;
     void setUnidad(const std::string& unidad);
 
-    string getId() const;
+    int getId() const;
 
     int getCant() const;
     void setCant(int cant);

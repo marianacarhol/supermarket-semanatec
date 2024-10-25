@@ -30,16 +30,17 @@ std::vector<Ingrediente> Inventario::leerDesdeArchivo(const std::string& nombreA
         // Leer cada línea del archivo CSV
         while (getline(archivo, linea)) {
             std::stringstream ss(linea);
-            std::string unidad, nom, id, cant_str;
-            int cant;
+            std::string unidad, nom, id_str, cant_str;
+            int cant, id;
 
             // Separar los valores por comas
-            getline(ss, id, ',');
+            getline(ss, id_str, ',');
             getline(ss, nom, ',');
             getline(ss, unidad, ',');
             getline(ss, cant_str, ',');
  
             cant = std::stoi(cant_str);
+            id = std::stoi(id_str);
 
             Ingrediente i(id, nom, unidad, cant);
             inventarioIngredientes.push_back(i);
@@ -56,14 +57,16 @@ void Inventario::imprimir(const std::vector<Ingrediente>& ingredientes) const {
         std::cout << i << std::endl; 
     }
 }
-/*
-void Inventario::actualizar(const std::vector<Ingrediente>& ingredientes, const std::vector<Ingrediente>& ingredientesPlatillo, int op) const {
+
+void Inventario::actualizar(std::vector<Ingrediente>& inventarioIngredientes, const std::vector<int>& ingredientesIDs, int op) {
     if (op == 1) {
-        // Iteramos sobre los ingredientes del platillo
-        for (const auto& ingredientePlatillo : ingredientesPlatillo) {
-            // Buscamos el ingrediente en el inventario
+        // Iteramos sobre los IDs de los ingredientes
+        for (const auto& idIngrediente : ingredientesIDs) {
+            bool encontrado = false; // Para saber si encontramos el ingrediente
+
             for (auto& ingrediente : inventarioIngredientes) {
-                if (ingrediente.getId() == ingredientePlatillo.getId()) {
+                if (idIngrediente == ingrediente.getId()) {
+                    encontrado = true; // Marcamos que encontramos el ingrediente
                     // Restamos uno a la cantidad del inventario
                     int nuevaCantidad = ingrediente.getCant() - 1;
                     if (nuevaCantidad < 0) {
@@ -72,10 +75,26 @@ void Inventario::actualizar(const std::vector<Ingrediente>& ingredientes, const 
                         // Actualizamos la cantidad en el inventario
                         ingrediente.setCant(nuevaCantidad);
                     }
-                    break;
+                    break; // Salir del bucle después de encontrar el ingrediente
                 }
+            }
+
+            if (!encontrado) {
+                std::cerr << "Error: Ingrediente con ID " << idIngrediente << " no encontrado en el inventario." << std::endl;
+            }
+        }
+
+        // Imprimir el inventario actualizado
+        std::cout << "Inventario actualizado:" << std::endl;
+        if (inventarioIngredientes.empty()) {
+            std::cout << "El inventario está vacío." << std::endl;
+        } else {
+            for (const auto& ingrediente : inventarioIngredientes) {
+                std::cout << "ID: " << ingrediente.getId() 
+                          << ", Nombre: " << ingrediente.getNom() 
+                          << ", Unidad: " << ingrediente.getUnidad()
+                          << ", Cantidad: " << ingrediente.getCant() << std::endl;
             }
         }
     }
 }
-*/

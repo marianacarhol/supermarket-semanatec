@@ -2,7 +2,7 @@
 #include "Ingrediente.h"
 
 // Constructor
-Ingrediente::Ingrediente(const std::string& id, const std::string& nom, const std::string& unidad, int cant)
+Ingrediente::Ingrediente(int id, const std::string& nom, const std::string& unidad, int cant)
     : id(id), nom(nom), unidad(unidad), cant(cant) {}
 
 // Getters
@@ -22,7 +22,7 @@ void Ingrediente::setUnidad(const std::string& unidad) {
     this->unidad = unidad;
 }
 
-std::string Ingrediente::getId() const {
+int Ingrediente::getId() const {
     return id;
 }
 

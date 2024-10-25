@@ -10,11 +10,13 @@ private:
     int opcion3;
 
 public:
+    Menu();
+
     Menu(int opcion1, int opcion2, int opcion3);
 
-    void printOpcion1(int opcion1);
-    void printOpcion2(int opcion2);
-    void printOpcion3(int opcion3);
+    int printOpcion1();
+    int printOpcion2(int opcion2);
+    int printOpcion3();
 };
 
 #endif

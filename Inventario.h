@@ -14,7 +14,7 @@ public:
     std::vector<Ingrediente> leerDesdeArchivo(const std::string& nombreArchivo) const;
     std::vector<Ingrediente> inventarioIngredientes;
     void imprimir(const std::vector<Ingrediente>& inventarioIngredientes) const;
-    //void Inventario::actualizar(const std::vector<Ingrediente>& ingredientes, const std::vector<Ingrediente>& ingredientesPlatillo, int op) const;
+    void actualizar(std::vector<Ingrediente>& ingredientes, const std::vector<int>& ingredientesIDs, int op);
 };
 
 #endif

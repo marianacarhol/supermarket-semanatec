@@ -24,7 +24,7 @@ public:
     std::string getReceta() const;
 
     // Agregar ingredientes
-    void leerArchivo(const string& nombreArchivo, const Inventario& inventario, int tipoPlatillo);
+    void leerArchivo(const string& nombreArchivo, const Inventario& inventario, int tipoPlatillo, const std::vector<Ingrediente>& baseDatos);
     void imp(const std::vector<Platillo>& platillos) const;
     void mostrarIngredientes()const;
 
@@ -32,7 +32,7 @@ public:
 
     std::vector<int> leerArchivoIngredientes(const std::string& nombreArchivo, int tipoPlatillo);
 
-    void compararIngredientes(const std::vector<Ingrediente>& baseDatos) const; 
+    void compararIngredientes(const std::vector<Ingrediente>& baseDatos, const std::vector<int>& ingredientes) const; 
 
     
 };
