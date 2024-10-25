@@ -23,21 +23,21 @@ int Menu::printOpcion1() {
 int Menu::printOpcion2(int op){
 
     if (op == 1){
-        std::cout << "¿Qué platillo quieres comer?" << endl;
+        std::cout << endl << "¿Qué platillo quieres comer?" << endl;
     std::cout << "1. Pollo a la naranja" << endl;
     std::cout << "2. Carne con brocoli" << endl;
     std::cout << "3. Arroz frito" << endl;
-    std::cin >> opcion2;
-    return opcion2;
+    std::cin >> opcion1;
+    return opcion1;
     } else if (op == 2){
-        std::cout << "¿Qué platillo quieres comer?" << endl;
+        std::cout << endl <<"¿Qué platillo quieres comer?" << endl;
     std::cout << "4. Enchiladas suizas" << endl;
     std::cout << "5. Mole" << endl;
     std::cout << "6. Chilaquiles verdes"<< endl;
     std::cin >> opcion2;
     return opcion2;
     } else if (op == 3){
-        std::cout << "¿Qué platillo quieres comer?" << endl;
+        std::cout << endl << "¿Qué platillo quieres comer?" << endl;
     std::cout << "7. Spaguetti bolognesa" << endl;
     std::cout << "8. Pasta alfredo con pollo" << endl;
     std::cout << "9. Pizza de pepperoni" << endl;
