@@ -11,9 +11,10 @@ public:
     int getCantidad(const Ingrediente& ingrediente) const;
     void setCantidad(Ingrediente& ingrediente, int cantidad);
     std::string getNom(const Ingrediente& ingrediente) const;
-    void leerDesdeArchivo(const std::string& nombreArchivo);
+    std::vector<Ingrediente> leerDesdeArchivo(const std::string& nombreArchivo) const;
     std::vector<Ingrediente> inventarioIngredientes;
     void imprimir(const std::vector<Ingrediente>& inventarioIngredientes) const;
+    //void Inventario::actualizar(const std::vector<Ingrediente>& ingredientes, const std::vector<Ingrediente>& ingredientesPlatillo, int op) const;
 };
 
 #endif

@@ -11,15 +11,17 @@ using namespace std;
 int main() {
     Inventario inv;
 
-    inv.leerDesdeArchivo("inventario.csv");
+    inv.leerDesdeArchivo("ingredientes.csv"); // Asegúrate de tener este método implementado
 
-    //inv.imprimir(inv.inventarioIngredientes);
+    // Definir el nombre del archivo de platillos
+    std::string nombreArchivoPlatillos = "platillos.csv"; // Cambia el nombre según tu archivo
 
-    Platillo p;
+    // Crear una instancia de Platillo
+    Platillo platillo;
 
-    p.leerArchivo("platillo.csv", 1);
-
-    // p.imp(p.platilloIngredientes);
+    // Llamar a la función leerArchivo de Platillo
+    int tipoPlatillo = 1; // Suponiendo que estás buscando el primer platillo (ajusta según sea necesario)
+    platillo.leerArchivo(nombreArchivoPlatillos, inv, tipoPlatillo);
 
     return 0;
 }
@@ -43,3 +45,5 @@ int main() {
     menu.print("Ensalada");
     menu.printOpcion2("Sopa");
 */
+
+//g++ -o pro main.cpp && ./pro

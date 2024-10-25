@@ -21,7 +21,8 @@ std::string Inventario::getNom(const Ingrediente& ingrediente) const {
     return ingrediente.getNom();
 }
 
-void Inventario::leerDesdeArchivo(const string& nombreArchivo) {
+std::vector<Ingrediente> Inventario::leerDesdeArchivo(const std::string& nombreArchivo)const {
+    std::vector<Ingrediente> inventarioIngredientes;
     ifstream archivo(nombreArchivo);
 
     if (archivo.is_open()) {
@@ -47,6 +48,7 @@ void Inventario::leerDesdeArchivo(const string& nombreArchivo) {
     } else {
         std::cerr << "No se pudo abrir el archivo" << std::endl;
     }
+    return inventarioIngredientes;
 }
 
 void Inventario::imprimir(const std::vector<Ingrediente>& ingredientes) const {
@@ -54,7 +56,7 @@ void Inventario::imprimir(const std::vector<Ingrediente>& ingredientes) const {
         std::cout << i << std::endl; 
     }
 }
-
+/*
 void Inventario::actualizar(const std::vector<Ingrediente>& ingredientes, const std::vector<Ingrediente>& ingredientesPlatillo, int op) const {
     if (op == 1) {
         // Iteramos sobre los ingredientes del platillo
@@ -76,3 +78,4 @@ void Inventario::actualizar(const std::vector<Ingrediente>& ingredientes, const 
         }
     }
 }
+*/

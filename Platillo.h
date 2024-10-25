@@ -20,17 +20,19 @@ public:
     // Getters
     std::string getNom() const;
     std::string getTipo() const;
-    std::string getIngredientes() const;
+    std::vector<int> getIngredientes() const;
     std::string getReceta() const;
 
     // Agregar ingredientes
-    void leerArchivo(const string& nombreArchivo);
+    void leerArchivo(const string& nombreArchivo, const Inventario& inventario, int tipoPlatillo);
     void imp(const std::vector<Platillo>& platillos) const;
     void mostrarIngredientes()const;
 
     friend std::ostream& operator<<(std::ostream& os, const Platillo& platillo);
 
     std::vector<int> leerArchivoIngredientes(const std::string& nombreArchivo, int tipoPlatillo);
+
+    void compararIngredientes(const std::vector<Ingrediente>& baseDatos) const; 
 
     
 };

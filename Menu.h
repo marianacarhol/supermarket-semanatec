@@ -7,6 +7,7 @@ class Menu {
 private:
     int opcion1;
     int opcion2;
+    int opcion3;
 
 public:
     Menu(int opcion1, int opcion2, int opcion3);
